@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <select id="all_select" onchange="changeLang()">
+        <option id="select">選択してください</option>
+        <option id="selected_jpn">日本語</option>
+        <option id="selected_en">English</option>
+        <option id="selected_all">全て表示</option>
+    </select>
+    <table id="all">
+        <tr id="jp">
+            <th>日本</th>
+            <td>こんにちは</td>
+            <td>ありがとう</td>
+            <td>さようなら</td>
+        </tr>
+        <tr id="en">
+            <th>English</th>
+            <td>Hello</td>
+            <td>Thank you</td>
+            <td>Good Bye</td>
+        </tr>
+    </table>
+
+    <script>
+        //①onchangeで使用されている関数の中身を実装してください。
+        let select = document.getElementById("select");
+        let selected_jpn = document.getElementById("selected_jpn");
+        let selected_en = document.getElementById("selected_en");
+        let selected_all = document.getElementById("selected_all");
+        let all = document.getElementById("all");
+        let jp = document.getElementById("jp");
+        let en = document.getElementById("en");
+        let all_select = document.getElementById("all_select");
+
+        function changeLang() {
+            let index = document.getElementById("all_select").selectedIndex;
+            if (index == 1) {
+                jp.style.display = "inline";
+                en.style.display = "none";
+            } else if (index == 2) {
+                jp.style.display = "none";
+                en.style.display = "inline";
+            } else {
+                jp.style.display = "inline";
+                en.style.display = "inline";
+            }
+        } 
+
+    </script>
+</body>
+</html>
